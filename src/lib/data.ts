@@ -917,147 +917,43 @@ export const announcementsData = [
 
 
 // YOU SHOULD CHANGE THE DATES OF THE EVENTS TO THE CURRENT DATE TO SEE THE EVENTS ON THE CALENDAR
+
+const createEvent = (title: string, dayOffset: number, startHour: number, startMinute: number, endHour: number, endMinute: number) => {
+  const year = new Date().getFullYear();
+  const month = 7; // August (0-based index)
+  const today = new Date();
+  const day = today.getDate() + dayOffset;
+
+  return {
+    title, 
+    allDay: false,
+    start: new Date(year, month, day, startHour, startMinute),
+    end: new Date(year, month, day, endHour, endMinute),
+  };
+};
+
 export const calendarEvents = [
-  {
-    title: "Math",
-    allDay: false,
-    start: new Date(2024, 7, 12, 8, 0),
-    end: new Date(2024, 7, 12, 8, 45),
-  },
-  {
-    title: "English",
-    allDay: false,
-    start: new Date(2024, 7, 12, 9, 0),
-    end: new Date(2024, 7, 12, 9, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2024, 7, 12, 10, 0),
-    end: new Date(2024, 7, 12, 10, 45),
-  },
-  {
-    title: "Physics",
-    allDay: false,
-    start: new Date(2024, 7, 12, 11, 0),
-    end: new Date(2024, 7, 12, 11, 45),
-  },
-  {
-    title: "Chemistry",
-    allDay: false,
-    start: new Date(2024, 7, 12, 13, 0),
-    end: new Date(2024, 7, 12, 13, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2024, 7, 12, 14, 0),
-    end: new Date(2024, 7, 12, 14, 45),
-  },
-  {
-    title: "English",
-    allDay: false,
-    start: new Date(2024, 7, 13, 9, 0),
-    end: new Date(2024, 7, 13, 9, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2024, 7, 13, 10, 0),
-    end: new Date(2024, 7, 13, 10, 45),
-  },
-  {
-    title: "Physics",
-    allDay: false,
-    start: new Date(2024, 7, 13, 11, 0),
-    end: new Date(2024, 7, 13, 11, 45),
-  },
-
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2024, 7, 13, 14, 0),
-    end: new Date(2024, 7, 13, 14, 45),
-  },
-  {
-    title: "Math",
-    allDay: false,
-    start: new Date(2024, 7, 14, 8, 0),
-    end: new Date(2024, 7, 14, 8, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2024, 7, 14, 10, 0),
-    end: new Date(2024, 7, 14, 10, 45),
-  },
-
-  {
-    title: "Chemistry",
-    allDay: false,
-    start: new Date(2024, 7, 14, 13, 0),
-    end: new Date(2024, 7, 14, 13, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2024, 7, 14, 14, 0),
-    end: new Date(2024, 7, 13, 14, 45),
-  },
-  {
-    title: "English",
-    allDay: false,
-    start: new Date(2024, 7, 15, 9, 0),
-    end: new Date(2024, 7, 15, 9, 45),
-  },
-  {
-    title: "Biology",
-    allDay: false,
-    start: new Date(2024, 7, 15, 10, 0),
-    end: new Date(2024, 7, 15, 10, 45),
-  },
-  {
-    title: "Physics",
-    allDay: false,
-    start: new Date(2024, 7, 15, 11, 0),
-    end: new Date(2024, 7, 15, 11, 45),
-  },
-
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2024, 7, 15, 14, 0),
-    end: new Date(2024, 7, 15, 14, 45),
-  },
-  {
-    title: "Math",
-    allDay: false,
-    start: new Date(2024, 7, 16, 8, 0),
-    end: new Date(2024, 7, 16, 8, 45),
-  },
-  {
-    title: "English",
-    allDay: false,
-    start: new Date(2024, 7, 16, 9, 0),
-    end: new Date(2024, 7, 16, 9, 45),
-  },
-
-  {
-    title: "Physics",
-    allDay: false,
-    start: new Date(2024, 7, 16, 11, 0),
-    end: new Date(2024, 7, 16, 11, 45),
-  },
-  {
-    title: "Chemistry",
-    allDay: false,
-    start: new Date(2024, 7, 16, 13, 0),
-    end: new Date(2024, 7, 16, 13, 45),
-  },
-  {
-    title: "History",
-    allDay: false,
-    start: new Date(2024, 7, 16, 14, 0),
-    end: new Date(2024, 7, 16, 14, 45),
-  },
+  createEvent("Math", 0, 8, 0, 8, 45),
+  createEvent("English", 1, 9, 0, 9, 45),
+  createEvent("Biology", 1, 10, 0, 10, 45),
+  createEvent("Physics", 1, 11, 0, 11, 45),
+  createEvent("Chemistry", 1, 13, 0, 13, 45),
+  createEvent("History", 1, 14, 0, 14, 45),
+  createEvent("English", 2, 9, 0, 9, 45),
+  createEvent("Biology", 2, 10, 0, 10, 45),
+  createEvent("Physics", 2, 11, 0, 11, 45),
+  createEvent("History", 2, 14, 0, 14, 45),
+  createEvent("Math", 3, 8, 0, 8, 45),
+  createEvent("Biology", 3, 10, 0, 10, 45),
+  createEvent("Chemistry", 3, 13, 0, 13, 45),
+  createEvent("History", 3, 14, 0, 14, 45),
+  createEvent("English", 4, 9, 0, 9, 45),
+  createEvent("Biology", 4, 10, 0, 10, 45),
+  createEvent("Physics", 4, 11, 0, 11, 45),
+  createEvent("History", 4, 14, 0, 14, 45),
+  createEvent("Math", 5, 8, 0, 8, 45),
+  createEvent("English", 5, 9, 0, 9, 45),
+  createEvent("Physics", 5, 11, 0, 11, 45),
+  createEvent("Chemistry", 5, 13, 0, 13, 45),
+  createEvent("History", 5, 14, 0, 14, 45),
 ];
